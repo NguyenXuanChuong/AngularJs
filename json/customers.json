@@ -1,0 +1,11 @@
+{ 	"records":
+	{
+		"name":"Nguyen Xuan Chuong",
+		"branch" : "Software engineering student", 
+		"country" : "Viet Nam",
+		"speciality" : "Information technology",
+		"university" : "University of Science",
+		"education" : "Third-year student",
+		"phone" : "01627658556"
+	}
+}

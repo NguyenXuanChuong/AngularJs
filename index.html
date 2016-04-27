@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="js/angular.min.js"></script>
+   	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script type="text/javascript" src="js/controller.js"></script>
+    <title>CV-1312055</title>
+</head>
+
+<body ng-app="myApp">
+	<header>
+        <div class="header-banner"> 
+        	<div class="wrapper">
+                <div class="header-logo">
+                    <a href="http://www.linkedin.com/"><img src="images/logo.png"/></a>
+                </div>
+                
+                <div class="header-nav">
+                    <ul class="nav-right">
+                        <li>
+                            <a href="http://www.linkedin.com/static?key=what_is_linkedin&amp;trk=hb_what">
+                            What's the LinkedIn?
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/start/join?trk=hb_join">
+                            Register
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/uas/login?goback=&amp;trk=hb_signin">
+                            Login
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+	<main>
+    	<!--left-->
+    	<div class="profile">
+        	<!--topcard-->
+        	<div class="topcard">
+            
+            
+            	<div class="avatar">
+                    <a href="https://www.linkedin.com/start/view-full-profile?_ed=0_bKBkcZ6t9p27QdIgoeLUuXkzX1gSSl_qdqwwJvSV0YG4ygi9WuSZ6sgPiZqmtjjZ&trk=pprof-0-ts-view_full-0">
+                        <img src="images/avatar.jpg" width="200" height="200"/>
+                    </a>
+                </div>
+                
+                
+                <div class="info" ng-controller="myController">
+                
+                	<div ng-model="person" >
+                        <div style="font-size: 28px; font-weight: bold">
+                           {{person.name}}
+                        
+                        </div>
+                        <div style="font-size: 20px">{{person.branch}}</div>
+                        <div style="font-size:16px; margin-bottom: 10px">{{person.country}} | {{person.speciality}}</div>
+                        
+                        
+                        
+                        <table class="table-detail">
+                            <tr>
+                                <td>University</td>
+                                <td>
+                                    <a href="http://www.hcmus.edu.vn/" style="text-decoration: none">{{person.university}}</a>, 
+                                   
+                                </td>		
+                                
+                            </tr>
+                            
+                           
+                            <tr>
+                                <td>Education</td>
+                                <td>{{person.education}}</td>		
+                                
+                            </tr>
+                            
+                            <tr>
+                                <td>Phone</td>
+                                <td>{{person.phone}}</td>		
+                                
+                            </tr>
+                        </table>
+
+                    </div>
+                    
+                </div>
+                
+                
+                <a href="https://www.linkedin.com/today/influencers?trk=inf_bdg_profile">
+                	<img src="images/logo2.png" width="92" height="22" />
+                </a>
+                
+                
+            </div>
+            
+            <div class="background">
+            	Background
+            </div>
+            
+            <div class="summary">
+            	<p class="title">Summary</p>
+                <p>My name is Nguyen Xuan Chuong. 
+                Studying natural sciences at the school. 
+                Information technology industry. 
+                Specialized software technology. 
+                Current third-year students. 
+                I am studying web programming. 
+                Mid-term project with the web programming cv</p>
+                
+            </div>
+            
+            <div class="summary">
+            	<p class="title">Experience</p>
+                <p>Web programming, programming on mobile devices</p>
+                
+            </div>
+            
+            <div class="summary">
+            	<p class="title">Project</p>
+                <p>Online sales website, photo album software, karaoke software</p>
+                
+            </div>
+            
+            <div class="summary">
+            	<p class="title">Skills</p>
+                <p>Understanding the types:</p>
+                <ul>
+                	<li>C/C++</li>
+                    <li>C#</li>
+                    <li>Java</li>
+                	<li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>AngularJs</li>
+            </div>
+           	
+            
+            <div class="summary">
+            	<p class="title">Education</p>
+                <p>Third-year student at the university of sciences</p>
+                
+            </div>
+           
+         
+        </div>
+      	<div class="aux">
+        	<div class="">Search</div>
+            <input type="text" style="float: left"/>
+            <img src="images/timkiem.png" width="25" height="25" style="float: left"/>
+            <div style="clear: both"></div>
+            <div>Example: Xuan Chuong</div>
+        </div>
+        
+        <div class="clearfloat"></div>
+    </main>
+    
+    <footer>
+		The end!
+    </footer>
+    
+    
+    
+    
+    
+	
+</body>
+</html>
