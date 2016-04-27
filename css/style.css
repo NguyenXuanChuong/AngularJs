@@ -125,10 +125,20 @@ main{
 	margin-left: 10px;
 	width: 300px;
 	float: right;
-	height: 500px;
-	background: #FFF;
 	padding: 20px;
+	background: #FFF;
 }
+
+
+.search{
+	margin-bottom: 100px;	
+	
+}
+.photo{
+	margin-top: 20px;	
+	
+}
+
 
 .clearfloat{
 	clear: both;
@@ -143,7 +153,8 @@ footer{
 	text-align: center;
 	margin-top: 20px;
 	border-top: #666 solid 1px;
-	border-bottom: #666 solid 1px;
+	border-bottom: #666 solid 1px; 
+	margin-bottom: 20px;
 }
 
 

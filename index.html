@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script type="text/javascript" src="js/angular.min.js"></script>
    	<link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <script type="text/javascript" src="js/controller.js"></script>
+    <script type="text/javascript" src="js/controller.js"></script>  
     <title>CV-1312055</title>
 </head>
 
@@ -39,10 +39,11 @@
         </div>
     </header>
     
-	<main>
+	<main ng-controller="myController">
+    
     	<!--left-->
-    	<div class="profile">
-        	<!--topcard-->
+    	<div class="profile" ng-model="person">
+        	
         	<div class="topcard">
             
             
@@ -53,9 +54,9 @@
                 </div>
                 
                 
-                <div class="info" ng-controller="myController">
+                <div class="info" >
                 
-                	<div ng-model="person" >
+                	<div  >
                         <div style="font-size: 28px; font-weight: bold">
                            {{person.name}}
                         
@@ -107,25 +108,19 @@
             
             <div class="summary">
             	<p class="title">Summary</p>
-                <p>My name is Nguyen Xuan Chuong. 
-                Studying natural sciences at the school. 
-                Information technology industry. 
-                Specialized software technology. 
-                Current third-year students. 
-                I am studying web programming. 
-                Mid-term project with the web programming cv</p>
+                <p>{{person.summary}}</p>
                 
             </div>
             
             <div class="summary">
             	<p class="title">Experience</p>
-                <p>Web programming, programming on mobile devices</p>
+                <p>{{person.experience}}</p>
                 
             </div>
             
             <div class="summary">
             	<p class="title">Project</p>
-                <p>Online sales website, photo album software, karaoke software</p>
+                <p>{{person.project}}</p>
                 
             </div>
             
@@ -133,33 +128,57 @@
             	<p class="title">Skills</p>
                 <p>Understanding the types:</p>
                 <ul>
-                	<li>C/C++</li>
-                    <li>C#</li>
-                    <li>Java</li>
-                	<li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>AngularJs</li>
+                	<li>{{person.skills}}</li>
+                </ul>
             </div>
            	
             
             <div class="summary">
             	<p class="title">Education</p>
-                <p>Third-year student at the university of sciences</p>
+                <p><span>{{person.education}}</span>at the university of sciences</p>
                 
             </div>
            
          
         </div>
+        
+       <!-- right-->
       	<div class="aux">
-        	<div class="">Search</div>
-            <input type="text" style="float: left"/>
-            <img src="images/timkiem.png" width="25" height="25" style="float: left"/>
-            <div style="clear: both"></div>
-            <div>Example: Xuan Chuong</div>
+        	<div class="search">
+                <div class="">Search</div>
+                <input ng-model="search" type="text" style="float: left"/>
+                <a href="#"><img   src="images/timkiem.png" width="25" height="25" style="float: left"/></a>
+                <div style="clear: both"></div>
+                <div>Example: Xuan Chuong</div>
+            </div>
+            
+            <div class="photo">
+                <img src="images/images.jpg" width="300" height="168"/>
+            </div>
+            
+            <div class="photo">
+                <img src="images/curious-kittens.jpg" width="300" height="168"/>
+            </div>
+            
+            <div class="photo">
+                <img src="images/phongcanh.jpg" width="300" height="168"/>
+            </div>
+            
+            <div class="photo">
+                <img src="images/images2.jpg" width="300" height="168"/>
+            </div>
+            
+            <div class="photo">
+                <img src="images/images4.jpg" width="300" height="168"/>
+            </div>
+       
+            
         </div>
         
+        
+        
         <div class="clearfloat"></div>
+        
     </main>
     
     <footer>
