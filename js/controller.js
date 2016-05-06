@@ -1,14 +1,16 @@
 // JavaScript Document
 
-var app = angular.module('myApp', []);
+var app = angular.module('myApp',["xeditable"]);
 
-app.controller('myController', function($scope, $http){
+app.run(function(editableOptions) {
+	editableOptions.theme = 'bs3';
+});
+
+app.controller('myController', function($scope, $filter, $q, $http){
 	
 	$http.get("json/customers.json").then(function (response) {
 			  $scope.person = response.data.records;
 		  });
-	
-	
 	
 	
 });

@@ -4,11 +4,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script type="text/javascript" src="js/angular.min.js"></script>
    	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="icon" href="images/icon.png"/>
     <script type="text/javascript" src="js/controller.js"></script>  
+    <script type="text/javascript" src="angular-xeditable/js/xeditable.js"></script>
+    <link rel="stylesheet" type="text/css" href="angular-xeditable/css/xeditable.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
     <title>CV-1312055</title>
 </head>
 
-<body ng-app="myApp">
+<body ng-app="myApp" class="main-body">
 	<header>
         <div class="header-banner"> 
         	<div class="wrapper">
@@ -57,12 +61,33 @@
                 <div class="info" >
                 
                 	<div  >
-                        <div style="font-size: 28px; font-weight: bold">
-                           {{person.name}}
-                        
+                        <div style="font-size: 28px; font-weight: bold" editable-text="person.name" e-form="btnName">
+                        	{{person.name}}
+                        	<a href="#">
+                            	<img src="images/Edit.ico" width="10" height="10" ng-click="btnName.$show()" ng-hide="btnName.$visible"/>
+                            </a>
                         </div>
-                        <div style="font-size: 20px">{{person.branch}}</div>
-                        <div style="font-size:16px; margin-bottom: 10px">{{person.country}} | {{person.speciality}}</div>
+                        <div style="font-size: 20px" editable-text="person.branch" e-form="btnBranch">
+                        	{{person.branch}}
+                            <a href="#">
+                            	<img src="images/Edit.ico" width="10" height="10" ng-click="btnBranch.$show()" ng-hide="btnBranch.$visible"/>
+                            </a>
+                        </div>
+                        <div style="font-size:16px; margin-bottom: 10px" >
+                        	<span editable-text="person.country" e-form="btnCountry">
+                            	{{person.country}}
+                            </span>
+                            <a href="#">
+                            	<img src="images/Edit.ico" width="10" height="10" ng-click="btnCountry.$show()" ng-hide="btnCountry.$visible"/>
+                            </a>
+                        	 | 
+                            <span editable-text="person.speciality" e-form="btnSpeciality">
+                            	{{person.speciality}}
+                            </span>
+                            <a href="#">
+                            	<img src="images/Edit.ico" width="10" height="10" ng-click="btnSpeciality.$show()" ng-hide="btnSpeciality.$visible"/>
+                            </a>
+                        </div>
                         
                         
                         
@@ -70,35 +95,61 @@
                             <tr>
                                 <td>University</td>
                                 <td>
-                                    <a href="http://www.hcmus.edu.vn/" style="text-decoration: none">{{person.university}}</a>, 
-                                   
+                                    <a href="http://www.hcmus.edu.vn/" style="text-decoration: none" editable-text="person.university" e-form="btnUniversity">
+                                    	{{person.university}}
+                                    </a> 
+                                   	
                                 </td>		
-                                
+                                <td>
+                                	<a href="#">
+                                        <img src="images/Edit.ico" width="10" height="10" ng-click="btnUniversity.$show()" ng-hide="btnUniversity.$visible"/>
+                                    </a>
+                                </td>
                             </tr>
                             
                            
                             <tr>
                                 <td>Education</td>
-                                <td>{{person.education}}</td>		
-                                
+                                <td >
+                                	<span editable-text="person.education" e-form="btnEducation">                                    
+	                                	{{person.education}}
+                                    </span>
+                                </td>		
+                                <td>
+                                	<a href="#">
+                                        <img src="images/Edit.ico" width="10" height="10" ng-click="btnEducation.$show()" ng-hide="btnEducation.$visible"/>
+                                    </a>
+                                </td>
                             </tr>
                             
                             <tr>
                                 <td>Phone</td>
-                                <td>{{person.phone}}</td>		
-                                
+                                <td >
+                                	<span editable-text="person.phone" e-form="btnPhone">
+                                		{{person.phone}}
+                                    </span>
+                                </td>		
+                                <td>
+                                	<a href="#">
+                                        <img src="images/Edit.ico" width="10" height="10" ng-click="btnPhone.$show()" ng-hide="btnPhone.$visible"/>
+                                    </a>
+                                </td>
                             </tr>
+                            
+                           
                         </table>
 
                     </div>
                     
+                   
+                    
                 </div>
                 
                 
-                <a href="https://www.linkedin.com/today/influencers?trk=inf_bdg_profile">
-                	<img src="images/logo2.png" width="92" height="22" />
-                </a>
                 
+                 <a href="https://www.linkedin.com/today/influencers?trk=inf_bdg_profile">
+                    <img src="images/logo2.png" width="92" height="22" />
+                </a>
                 
             </div>
             
@@ -108,37 +159,39 @@
             
             <div class="summary">
             	<p class="title">Summary</p>
-                <p>{{person.summary}}</p>
-                
+                <p  editable-textarea="person.summary" e-form="textBtnForm1" e-rows="4" e-cols="80">{{person.summary}}</p>
+                <button class="btn btn-default" ng-click="textBtnForm1.$show()" ng-hide="textBtnForm1.$visible">Edit</button>
             </div>
             
             <div class="summary">
             	<p class="title">Experience</p>
-                <p>{{person.experience}}</p>
-                
+                <p editable-textarea="person.experience" e-form="textBtnForm2" e-rows="4" e-cols="80">{{person.experience}}</p>
+                <button class="btn btn-default" ng-click="textBtnForm2.$show()" ng-hide="textBtnForm2.$visible">Edit</button>
             </div>
             
             <div class="summary">
             	<p class="title">Project</p>
-                <p>{{person.project}}</p>
-                
+                <p editable-textarea="person.project" e-form="textBtnForm3" e-rows="4" e-cols="80">{{person.project}}</p>
+                <button class="btn btn-default" ng-click="textBtnForm3.$show()" ng-hide="textBtnForm3.$visible">Edit</button>
             </div>
             
             <div class="summary">
             	<p class="title">Skills</p>
                 <p>Understanding the types:</p>
                 <ul>
-                	<li>{{person.skills}}</li>
+                	<li editable-textarea="person.skills" e-form="textBtnForm4" e-rows="4" e-cols="80">{{person.skills}}</li>
                 </ul>
+                <button class="btn btn-default" ng-click="textBtnForm4.$show()" ng-hide="textBtnForm4.$visible">Edit</button>
             </div>
            	
             
             <div class="summary">
             	<p class="title">Education</p>
-                <p><span>{{person.education}}</span>at the university of sciences</p>
-                
+                <p><span editable-textarea="person.education" e-form="textBtnForm5" e-rows="4" e-cols="80">{{person.education}}</span></p>
+                <button class="btn btn-default" ng-click="textBtnForm5.$show()" ng-hide="textBtnForm5.$visible">Edit</button>
             </div>
            
+
          
         </div>
         
@@ -163,7 +216,7 @@
             <div class="photo">
                 <img src="images/phongcanh.jpg" width="300" height="168"/>
             </div>
-            
+          	
             <div class="photo">
                 <img src="images/images2.jpg" width="300" height="168"/>
             </div>
